@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: Arial, "Segoe UI", sans-serif;
+    --font-mono: Consolas, "Cascadia Mono", "Courier New", monospace;
+
+    --color-brand: #f0282c;
+    --color-out: #3a3f45;
+    --color-in: #2f6690;
+    --color-warning: #c98a00;
+    --color-warning-bg: #fff4db;
+    --color-warning-text: #6b4700;
+
+    --color-page: #efefef;
+    --color-cell: #e4e4e4;
+    --color-line: #bfbfbf;
+    --color-line-soft: #d9d9d9;
+    --color-ink: #1a1a1a;
+    --color-ink-soft: #4a4a4a;
+}
