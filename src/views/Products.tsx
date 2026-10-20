@@ -1,3 +1,50 @@
+import { useLoaderData } from "react-router"
+import { formatNumber } from "../utils"
+import { getProducts } from "../services/ProductService"
+
 export default function Products() {
-    return <h1 className="text-3xl font-bold">Productos</h1>
+    const products = useLoaderData<typeof getProducts>()
+    const totalStock = products.reduce((total, product) => total + product.stock, 0)
+
+    return (
+        <section>
+            <h1 className="text-3xl font-bold">Productos</h1>
+            <p className="mt-1 mb-5 text-ink-soft">
+                {products.length} tornillos · {formatNumber(totalStock)} pzas en existencia
+            </p>
+
+            {products.length === 0 ? (
+                <p className="border border-line bg-white p-6 text-lg">
+                    Todavía no hay tornillos registrados.
+                </p>
+            ) : (
+                <table className="w-full border border-line bg-white text-lg">
+                    <thead>
+                        <tr className="bg-cell text-left text-sm tracking-white uppercase">
+                            <th className="border-b border-line px-5 py-3">Nombre (Oddo)</th>
+                            <th className="border-b border-line px-5 py-3">Código</th>
+                            <th className="border-b border-line px-5 py-3 text-right">
+                                Existencia
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {products.map((product) => (
+                            <tr key={product.id}>
+                                <td className="border-b border-line-soft px-5 py-3 font-mono text-xl font-bold">
+                                    {product.name}
+                                </td>
+                                <td className="border-b border-line-soft px-5 py-3 font-mono">
+                                    {product.code}
+                                </td>
+                                <td className="border-b border-line-soft px-5 py-3 text-right font-mono font-bold">
+                                    {formatNumber(product.stock)} pzas
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            )}
+        </section>
+    )
 }
