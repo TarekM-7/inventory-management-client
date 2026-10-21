@@ -7,6 +7,7 @@ import NotFound from "./views/NotFound"
 import { getProducts } from "./services/ProductService"
 import RouteError from "./components/RouteError"
 import Loading from "./components/Loading"
+import NewProduct from "./views/NewProduct"
 
 export const router = createBrowserRouter([
     {
@@ -19,6 +20,11 @@ export const router = createBrowserRouter([
                 path: "productos",
                 element: <Products />,
                 loader: getProducts,
+                errorElement: <RouteError />
+            },
+            {
+                path: "productos/nuevo",
+                element: <NewProduct />,
                 errorElement: <RouteError />
             },
             { path: "historial", element: <History /> },
