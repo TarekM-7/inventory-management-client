@@ -30,6 +30,10 @@ export const ProductsResponseSchema = object({
     meta: PaginationSchema
 })
 
+export const ProductResponseSchema = object({
+    data: ProductSchema
+})
+
 export type Product = InferOutput<typeof ProductSchema>
 
 export const ProductInputSchema = object({

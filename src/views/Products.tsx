@@ -36,6 +36,7 @@ export default function Products() {
                             <th className="border-b border-line px-5 py-3 text-right">
                                 Existencia
                             </th>
+                            <th className="border-b border-line px-5 py-3 text-right">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,6 +50,14 @@ export default function Products() {
                                 </td>
                                 <td className="border-b border-line-soft px-5 py-3 text-right font-mono font-bold">
                                     {formatNumber(product.stock)} pzas
+                                </td>
+                                <td className="border-b border-line-soft px-5 py-3 text-right">
+                                    <Link
+                                        to={`/productos/${product.id}/editar`}
+                                        className="inline-flex h-11 items-center border border-line px-4 font-bold"
+                                    >
+                                        Editar
+                                    </Link>
                                 </td>
                             </tr>
                         ))}
