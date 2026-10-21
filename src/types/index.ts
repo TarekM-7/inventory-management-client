@@ -1,4 +1,15 @@
-import { array, number, object, string, type InferOutput } from "valibot"
+import {
+    array,
+    maxLength,
+    nonEmpty,
+    number,
+    object,
+    pipe,
+    string,
+    toUpperCase,
+    trim,
+    type InferOutput
+} from "valibot"
 
 export const ProductSchema = object({
     id: number(),
@@ -20,3 +31,21 @@ export const ProductsResponseSchema = object({
 })
 
 export type Product = InferOutput<typeof ProductSchema>
+
+export const ProductInputSchema = object({
+    name: pipe(
+        string(),
+        trim(),
+        nonEmpty("Escribe el nombre."),
+        maxLength(100, "El nombre puede tener hasta 100 caracteres.")
+    ),
+    code: pipe(
+        string(),
+        trim(),
+        toUpperCase(),
+        nonEmpty("Escribe el código."),
+        maxLength(100, "El código puede tener hasta 100 caracteres.")
+    )
+})
+
+export type ProductInput = InferOutput<typeof ProductInputSchema>

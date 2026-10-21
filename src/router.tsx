@@ -8,6 +8,7 @@ import { getProducts } from "./services/ProductService"
 import RouteError from "./components/RouteError"
 import Loading from "./components/Loading"
 import NewProduct from "./views/NewProduct"
+import { newProductAction } from "./actions/productActions"
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +26,7 @@ export const router = createBrowserRouter([
             {
                 path: "productos/nuevo",
                 element: <NewProduct />,
+                action: newProductAction,
                 errorElement: <RouteError />
             },
             { path: "historial", element: <History /> },
