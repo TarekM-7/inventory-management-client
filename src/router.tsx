@@ -8,7 +8,7 @@ import { getProductById, getProducts } from "./services/ProductService"
 import RouteError from "./components/RouteError"
 import Loading from "./components/Loading"
 import NewProduct from "./views/NewProduct"
-import { editProductAction, newProductAction } from "./actions/productActions"
+import { deleteProductAction, editProductAction, newProductAction } from "./actions/productActions"
 import EditProduct from "./views/EditProduct"
 
 export const router = createBrowserRouter([
@@ -35,6 +35,11 @@ export const router = createBrowserRouter([
                 element: <EditProduct />,
                 loader: ({ params }) => getProductById(Number(params.id)),
                 action: editProductAction,
+                errorElement: <RouteError />
+            },
+            {
+                path: "productos/:id/eliminar",
+                action: deleteProductAction,
                 errorElement: <RouteError />
             },
             { path: "historial", element: <History /> },

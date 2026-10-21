@@ -19,3 +19,7 @@ export async function getProductById(id: number) {
 export async function updateProduct(id: number, product: ProductInput) {
     await api.put(`/api/products/${id}`, product)
 }
+
+export async function deleteProduct(id: number) {
+    await api.delete(`/api/products/${id}`)
+}

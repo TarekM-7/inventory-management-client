@@ -3,6 +3,7 @@ import type { getProductById } from "../services/ProductService"
 import type { editProductAction } from "../actions/productActions"
 import { formatNumber } from "../utils"
 import ProductForm from "../components/ProductForm"
+import DeleteProduct from "../components/DeleteProduct"
 
 export default function EditProduct() {
     const product = useLoaderData<typeof getProductById>()
@@ -19,6 +20,7 @@ export default function EditProduct() {
                 errors={actionData?.errors}
                 submitLabel="Guardar cambios"
             />
+            <DeleteProduct product={product} />
         </section>
     )
 }

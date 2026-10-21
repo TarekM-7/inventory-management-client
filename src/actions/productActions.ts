@@ -1,7 +1,7 @@
 import { flatten, safeParse } from "valibot"
 import { ProductInputSchema } from "../types"
 import { redirect, type ActionFunctionArgs } from "react-router"
-import { createProduct, updateProduct } from "../services/ProductService"
+import { createProduct, deleteProduct, updateProduct } from "../services/ProductService"
 import { isAxiosError } from "axios"
 
 async function readProductForm(request: Request) {
@@ -41,5 +41,10 @@ export async function editProductAction({ request, params }: ActionFunctionArgs)
     } catch (error) {
         return duplicateCodeErrors(error)
     }
+    return redirect("/productos")
+}
+
+export async function deleteProductAction({ params }: ActionFunctionArgs) {
+    await deleteProduct(Number(params.id))
     return redirect("/productos")
 }
