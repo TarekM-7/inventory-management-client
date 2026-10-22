@@ -8,6 +8,7 @@ import {
     nullable,
     number,
     object,
+    omit,
     picklist,
     pipe,
     string,
@@ -96,3 +97,8 @@ export const MovementInputSchema = object({
 })
 
 export type MovementInput = InferOutput<typeof MovementInputSchema>
+
+export const ProductMovementsResponseSchema = object({
+    data: array(omit(MovementSchema, ["product"])),
+    meta: PaginationSchema
+})
