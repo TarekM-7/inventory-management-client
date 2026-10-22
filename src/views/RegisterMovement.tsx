@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router"
 import type { registerMovementLoader } from "../loaders/registerMovementLoader"
 import { useState } from "react"
 import ProductPicker from "../components/ProductPicker"
+import MovementForm from "../components/MovementForm"
 
 export default function RegisterMovement() {
     const { products } = useLoaderData<typeof registerMovementLoader>()
@@ -39,7 +40,7 @@ export default function RegisterMovement() {
                 <h2 className="mb-5 text-sm font-bold tracking-wide text-ink-soft uppercase">
                     2 · Registra el movimiento
                 </h2>
-                {selected && <p className="font-mono text-3xl font-bold">{selected.name}</p>}
+                {selected && <MovementForm product={selected} />}
             </section>
         </div>
     )

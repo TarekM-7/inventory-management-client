@@ -11,6 +11,7 @@ import NewProduct from "./views/NewProduct"
 import { deleteProductAction, editProductAction, newProductAction } from "./actions/productActions"
 import EditProduct from "./views/EditProduct"
 import { registerMovementLoader } from "./loaders/registerMovementLoader"
+import { registerMovementAction } from "./actions/movementActions"
 
 export const router = createBrowserRouter([
     {
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
                 index: true,
                 element: <RegisterMovement />,
                 loader: registerMovementLoader,
+                action: registerMovementAction,
                 errorElement: <RouteError />
             },
             {
