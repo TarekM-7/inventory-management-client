@@ -1,6 +1,9 @@
 import {
     array,
+    integer,
     maxLength,
+    maxValue,
+    minValue,
     nonEmpty,
     nullable,
     number,
@@ -9,6 +12,7 @@ import {
     pipe,
     string,
     toUpperCase,
+    transform,
     trim,
     type InferOutput
 } from "valibot"
@@ -75,3 +79,20 @@ export const MovementsResponseSchema = object({
 })
 
 export type Movement = InferOutput<typeof MovementSchema>
+
+export const MovementInputSchema = object({
+    productId: pipe(string(), transform(Number), integer()),
+    type: picklist(["in", "out"]),
+    quantity: pipe(
+        string(),
+        trim(),
+        nonEmpty("Escribe la cantidad."),
+        transform(Number),
+        integer("Escribe un número entero, sin decimales."),
+        minValue(1, "La cantidad debe ser mayor a 0."),
+        maxValue(999999, "La cantidad puede ser hasta 999,999.")
+    ),
+    note: pipe(string(), trim(), maxLength(255, "La nota puede tener hasta 255 caracteres."))
+})
+
+export type MovementInput = InferOutput<typeof MovementInputSchema>
