@@ -45,6 +45,14 @@ export async function editProductAction({ request, params }: ActionFunctionArgs)
 }
 
 export async function deleteProductAction({ params }: ActionFunctionArgs) {
-    await deleteProduct(Number(params.id))
+    try {
+        await deleteProduct(Number(params.id))
+    } catch (error) {
+        if (isAxiosError(error) && error.response?.status === 409) {
+            return { error: "No se puede eliminar: este tornillo ya tiene movimientos." }
+        }
+        throw error
+    }
+
     return redirect("/productos")
 }

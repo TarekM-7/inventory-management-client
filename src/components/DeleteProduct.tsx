@@ -1,13 +1,14 @@
 import { useFetcher } from "react-router"
 import type { Product } from "../types"
 import { useState } from "react"
+import type { deleteProductAction } from "../actions/productActions"
 
 type DeleteProductProps = {
     product: Product
 }
 
 export default function DeleteProduct({ product }: DeleteProductProps) {
-    const fetcher = useFetcher()
+    const fetcher = useFetcher<typeof deleteProductAction>()
     const [confirming, setConfirming] = useState(false)
     const isDeleting = fetcher.state !== "idle"
 
@@ -17,6 +18,15 @@ export default function DeleteProduct({ product }: DeleteProductProps) {
             <p className="mt-1 text-ink-soft">
                 Solo se puede eliminar un tornillo que todavía no tiene movimientos.
             </p>
+
+            {fetcher.data?.error && (
+                <p
+                    role="alert"
+                    className="mt-4 border-2 border-warning bg-warning-bg p-4 font-bold text-warning-text"
+                >
+                    {fetcher.data.error}
+                </p>
+            )}
 
             {confirming ? (
                 <fetcher.Form
