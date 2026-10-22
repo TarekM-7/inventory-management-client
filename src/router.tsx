@@ -10,6 +10,7 @@ import Loading from "./components/Loading"
 import NewProduct from "./views/NewProduct"
 import { deleteProductAction, editProductAction, newProductAction } from "./actions/productActions"
 import EditProduct from "./views/EditProduct"
+import { registerMovementLoader } from "./loaders/registerMovementLoader"
 
 export const router = createBrowserRouter([
     {
@@ -17,7 +18,12 @@ export const router = createBrowserRouter([
         element: <Layout />,
         hydrateFallbackElement: <Loading />,
         children: [
-            { index: true, element: <RegisterMovement /> },
+            {
+                index: true,
+                element: <RegisterMovement />,
+                loader: registerMovementLoader,
+                errorElement: <RouteError />
+            },
             {
                 path: "productos",
                 element: <Products />,

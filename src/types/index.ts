@@ -2,8 +2,10 @@ import {
     array,
     maxLength,
     nonEmpty,
+    nullable,
     number,
     object,
+    picklist,
     pipe,
     string,
     toUpperCase,
@@ -53,3 +55,23 @@ export const ProductInputSchema = object({
 })
 
 export type ProductInput = InferOutput<typeof ProductInputSchema>
+
+export const MovementSchema = object({
+    id: number(),
+    type: picklist(["in", "out"]),
+    quantity: number(),
+    note: nullable(string()),
+    createdAt: string(),
+    product: object({
+        id: number(),
+        name: string(),
+        code: string()
+    })
+})
+
+export const MovementsResponseSchema = object({
+    data: array(MovementSchema),
+    meta: PaginationSchema
+})
+
+export type Movement = InferOutput<typeof MovementSchema>
