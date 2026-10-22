@@ -1,3 +1,22 @@
+import { useLoaderData } from "react-router"
+import MovementsTable from "../components/MovementsTable"
+import type { historyLoader } from "../loaders/historyLoader"
+import { formatNumber } from "../utils"
+
 export default function History() {
-    return <h1 className="text-3xl font-bold">Historial de Movimientos</h1>
+    const { movements } = useLoaderData<typeof historyLoader>()
+    const { total } = movements.meta
+
+    return (
+        <section>
+            <div className="mb-5">
+                <h1 className="text-3xl font-bold">Historial de movimientos</h1>
+                <p className="mt-1 text-ink-soft">
+                    {formatNumber(total)} movimientos · del más reciente al más antiguo
+                </p>
+            </div>
+
+            <MovementsTable movements={movements.data} />
+        </section>
+    )
 }

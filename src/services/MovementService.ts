@@ -14,3 +14,8 @@ export async function createMovement({ productId, type, quantity, note }: Moveme
         note: note || undefined
     })
 }
+
+export async function getMovements(page: number) {
+    const { data } = await api.get("/api/movements", { params: { page, limit: 20 } })
+    return parse(MovementsResponseSchema, data)
+}

@@ -12,6 +12,7 @@ import { deleteProductAction, editProductAction, newProductAction } from "./acti
 import EditProduct from "./views/EditProduct"
 import { registerMovementLoader } from "./loaders/registerMovementLoader"
 import { registerMovementAction } from "./actions/movementActions"
+import { historyLoader } from "./loaders/historyLoader"
 
 export const router = createBrowserRouter([
     {
@@ -50,7 +51,12 @@ export const router = createBrowserRouter([
                 action: deleteProductAction,
                 errorElement: <RouteError />
             },
-            { path: "historial", element: <History /> },
+            {
+                path: "historial",
+                element: <History />,
+                loader: historyLoader,
+                errorElement: <RouteError />
+            },
             { path: "*", element: <NotFound /> }
         ]
     }
