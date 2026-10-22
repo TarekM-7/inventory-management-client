@@ -3,6 +3,7 @@ import { MovementInputSchema } from "../types"
 import { flatten, safeParse } from "valibot"
 import { createMovement } from "../services/MovementService"
 import { formatNumber } from "../utils"
+import { isAxiosError } from "axios"
 
 export async function registerMovementAction({ request }: ActionFunctionArgs) {
     const formData = Object.fromEntries(await request.formData())
@@ -11,7 +12,14 @@ export async function registerMovementAction({ request }: ActionFunctionArgs) {
         return { errors: flatten(result.issues).nested }
     }
 
-    await createMovement(result.output)
+    try {
+        await createMovement(result.output)
+    } catch (error) {
+        if (isAxiosError(error) && error.response?.status === 409) {
+            return { errors: { quantity: ["No hay suficientes piezas en existencia."] } }
+        }
+        throw error
+    }
 
     const { type, quantity } = result.output
     const label = type === "out" ? "Salida" : "Entrada"
