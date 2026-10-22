@@ -51,13 +51,21 @@ export default function Products() {
                                 <td className="border-b border-line-soft px-5 py-3 text-right font-mono font-bold">
                                     {formatNumber(product.stock)} pzas
                                 </td>
-                                <td className="border-b border-line-soft px-5 py-3 text-right">
-                                    <Link
-                                        to={`/productos/${product.id}/editar`}
-                                        className="inline-flex h-11 items-center border border-line px-4 font-bold"
-                                    >
-                                        Editar
-                                    </Link>
+                                <td className="border-b border-line-soft px-5 py-3">
+                                    <div className="flex justify-end gap-2">
+                                        <Link
+                                            to={`/historial?tornillo=${product.id}`}
+                                            className="inline-flex h-11 items-center border border-line px-4 font-bold"
+                                        >
+                                            Ver historial
+                                        </Link>
+                                        <Link
+                                            to={`/productos/${product.id}/editar`}
+                                            className="inline-flex h-11 items-center border border-line px-4 font-bold"
+                                        >
+                                            Editar
+                                        </Link>
+                                    </div>
                                 </td>
                             </tr>
                         ))}
