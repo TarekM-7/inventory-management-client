@@ -2,10 +2,15 @@ import { useLoaderData } from "react-router"
 import MovementsTable from "../components/MovementsTable"
 import type { historyLoader } from "../loaders/historyLoader"
 import { formatNumber } from "../utils"
+import Pagination from "../components/Pagination"
 
 export default function History() {
     const { movements } = useLoaderData<typeof historyLoader>()
-    const { total } = movements.meta
+    const { page, total, totalPages } = movements.meta
+
+    function pageUrl(newPage: number) {
+        return `?pagina=${newPage}`
+    }
 
     return (
         <section>
@@ -17,6 +22,7 @@ export default function History() {
             </div>
 
             <MovementsTable movements={movements.data} />
+            <Pagination page={page} totalPages={totalPages} pageUrl={pageUrl} />
         </section>
     )
 }
