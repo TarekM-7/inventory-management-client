@@ -3,9 +3,10 @@ import type { registerMovementLoader } from "../loaders/registerMovementLoader"
 import { useState } from "react"
 import ProductPicker from "../components/ProductPicker"
 import MovementForm from "../components/MovementForm"
+import MovementsTable from "../components/MovementsTable"
 
 export default function RegisterMovement() {
-    const { products } = useLoaderData<typeof registerMovementLoader>()
+    const { products, movements } = useLoaderData<typeof registerMovementLoader>()
     const [selectedId, setSelectedId] = useState(products[0]?.id)
     const selected = products.find((product) => product.id === selectedId)
 
@@ -33,6 +34,12 @@ export default function RegisterMovement() {
                         selectedId={selectedId}
                         onSelect={setSelectedId}
                     />
+                </section>
+                <section>
+                    <h2 className="mb-3 text-sm font-bold tracking-wide text-ink-soft uppercase">
+                        Últimos movimientos
+                    </h2>
+                    <MovementsTable movements={movements} />
                 </section>
             </div>
 
