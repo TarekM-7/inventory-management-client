@@ -21,7 +21,7 @@ export default function ProductPicker({ products, selectedId, onSelect }: Produc
                         onClick={() => onSelect(product.id)}
                         className={`grid w-full cursor-pointer grid-cols-[1fr_auto] items-center gap-5 border-b border-line-soft px-6 py-4 text-left last:border-b-0 ${
                             isSelected
-                                ? "bg-in/10 outline-2 outline-offset-0 outline-in"
+                                ? "bg-in/10 outline-2 -outline-offset-2 outline-in"
                                 : "hover:bg-page"
                         }`}
                     >
