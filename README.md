@@ -218,6 +218,7 @@ Things I want to improve, found while using the app:
 - [ ] **Long notes in "Últimos movimientos".** A long note stretches the table across the page; it should wrap or be cut with the full text available on hover.
 - [ ] **Long notes in Historial.** The same problem in the history table, which also needs a cleaner layout for long notes.
 - [ ] **A responsive Registrar screen.** The two columns have a fixed `640px` form, so on a smaller window or screen they do not fit. Using Tailwind's breakpoints (`md:`, `lg:`, which are media queries), the form should move below the screw list on narrow screens.
+- [ ] **Softer corners.** Buttons, inputs, tabs and boxes have square corners, which makes the interface look harsh. A small border radius (Tailwind's `rounded` or `rounded-md`) on them would keep the plant-form look but make it feel less stiff.
 
 ## Acknowledgements
 
