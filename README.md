@@ -209,6 +209,15 @@ cd ~/apps/inventory-management-client && git pull && npm ci && npm run build
 
 No restart is needed: `pm2 serve` reads the files in `dist/` on every request. When a change needs a new API too, update the API first.
 
+## What's Next
+
+Things I want to improve, found while using the app:
+
+- [ ] **Less flickering on repeated clicks.** Clicking a tab, a button or a page link several times in a row makes some parts of the screen flash while the data loads again.
+- [ ] **A screw list that does not grow forever.** In Registrar, the "Elige el tornillo" list gets as tall as the number of screws; with many of them, it should scroll inside its own box or be searchable.
+- [ ] **Long notes in "Últimos movimientos".** A long note stretches the table across the page; it should wrap or be cut with the full text available on hover.
+- [ ] **Long notes in Historial.** The same problem in the history table, which also needs a cleaner layout for long notes.
+
 ## Acknowledgements
 
 The React client pattern comes from the Udemy course linked above. This project applies it to a new domain, and I wrote the implementation while learning.
