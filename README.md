@@ -217,6 +217,7 @@ Things I want to improve, found while using the app:
 - [ ] **A screw list that does not grow forever.** In Registrar, the "Elige el tornillo" list gets as tall as the number of screws; with many of them, it should scroll inside its own box or be searchable.
 - [ ] **Long notes in "Últimos movimientos".** A long note stretches the table across the page; it should wrap or be cut with the full text available on hover.
 - [ ] **Long notes in Historial.** The same problem in the history table, which also needs a cleaner layout for long notes.
+- [ ] **A responsive Registrar screen.** The two columns have a fixed `640px` form, so on a smaller window or screen they do not fit. Using Tailwind's breakpoints (`md:`, `lg:`, which are media queries), the form should move below the screw list on narrow screens.
 
 ## Acknowledgements
 
