@@ -44,7 +44,7 @@ export default function History() {
                             id="tornillo"
                             name="tornillo"
                             defaultValue={product?.id ?? ""}
-                            className="h-12 min-w-80 border-2 border-line bg-white px-3 font-mono text-lg"
+                            className="h-13 w-90 rounded-sm border-2 border-line bg-white px-3 font-mono text-lg"
                         >
                             <option value="">Todos los tornillos</option>
                             {products.map((item) => (
@@ -56,7 +56,7 @@ export default function History() {
                     </div>
                     <button
                         type="submit"
-                        className="h-12 cursor-pointer bg-out px-6 font-bold text-white"
+                        className="h-13 cursor-pointer rounded-sm bg-out px-6 font-bold text-white"
                     >
                         Filtrar
                     </button>
