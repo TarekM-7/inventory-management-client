@@ -23,10 +23,10 @@ export default function RegisterMovement() {
     }
 
     return (
-        <div className="grid grid-cols-[minmax(0,1fr)_640px] items-start gap-8">
+        <div className="grid grid-cols-[minmax(0,1fr)_550px] items-start gap-8">
             <div className="flex flex-col gap-8">
                 <section>
-                    <h2 className="mb-3 text-sm font-bold tracking-wide text-ink-soft uppercase">
+                    <h2 className="border border-b-0 border-line bg-cell py-2.5 px-4.5 text-[15px] font-bold tracking-wider text-ink uppercase">
                         1 · Elige el tornillo
                     </h2>
                     <ProductPicker
@@ -36,18 +36,19 @@ export default function RegisterMovement() {
                     />
                 </section>
                 <section>
-                    <h2 className="mb-3 text-sm font-bold tracking-wide text-ink-soft uppercase">
+                    <h2 className="border border-b-0 border-line bg-cell py-2.5 px-4.5 text-[15px] font-bold tracking-wider text-ink uppercase">
                         Últimos movimientos
                     </h2>
                     <MovementsTable movements={movements} />
                 </section>
             </div>
-
-            <section className="border border-line bg-white p-6">
-                <h2 className="mb-5 text-sm font-bold tracking-wide text-ink-soft uppercase">
+            <section>
+                <h2 className="border border-b-0 border-line bg-cell py-2.5 px-4.5 text-[15px] font-bold tracking-wider text-ink uppercase">
                     2 · Registra el movimiento
                 </h2>
-                {selected && <MovementForm product={selected} />}
+                <div className="border border-line bg-white p-6">
+                    {selected && <MovementForm product={selected} />}
+                </div>
             </section>
         </div>
     )
