@@ -28,30 +28,37 @@ export default function Products() {
                     Todavía no hay tornillos registrados.
                 </p>
             ) : (
-                <table className="w-full border border-line bg-white text-lg">
+                <table className="w-full border border-line bg-white text-lg table-fixed">
                     <thead>
                         <tr className="bg-cell text-left text-sm tracking-wide uppercase">
-                            <th className="border-b border-line px-5 py-3">Nombre (Odoo)</th>
-                            <th className="border-b border-line px-5 py-3">Código</th>
-                            <th className="border-b border-line px-5 py-3 text-right">
+                            <th className="w-[27%] border-b border-line px-4.5 py-2">
+                                Nombre (Odoo)
+                            </th>
+                            <th className="w-[22%] border-b border-line px-4.5 py-2">Código</th>
+                            <th className="w-[18%] border-b border-line px-4.5 py-2 text-right">
                                 Existencia
                             </th>
-                            <th className="border-b border-line px-5 py-3 text-right">Acciones</th>
+                            <th className="w-[33%] border-b border-line px-4.5 py-2 text-right">
+                                Acciones
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         {products.map((product) => (
                             <tr key={product.id}>
-                                <td className="border-b border-line-soft px-5 py-3 font-mono text-xl font-bold">
+                                <td
+                                    className="truncate border-b border-line-soft px-4.5 py-2.5 font-mono text-[22px] font-bold"
+                                    title={product.name}
+                                >
                                     {product.name}
                                 </td>
-                                <td className="border-b border-line-soft px-5 py-3 font-mono">
+                                <td className="border-b border-line-soft px-4.5 py-2.5 font-mono">
                                     {product.code}
                                 </td>
-                                <td className="border-b border-line-soft px-5 py-3 text-right font-mono font-bold">
+                                <td className="border-b border-line-soft px-4.5 py-2.5 text-right font-mono font-bold">
                                     {formatNumber(product.stock)} pzas
                                 </td>
-                                <td className="border-b border-line-soft px-5 py-3">
+                                <td className="border-b border-line-soft px-4.5 py-2.5">
                                     <div className="flex justify-end gap-2">
                                         <Link
                                             to={`/historial?tornillo=${product.id}`}
