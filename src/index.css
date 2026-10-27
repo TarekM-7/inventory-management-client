@@ -18,3 +18,9 @@
     --color-ink: #1a1a1a;
     --color-ink-soft: #4a4a4a;
 }
+
+@layer base {
+    html {
+        line-height: normal;
+    }
+}
