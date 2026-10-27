@@ -79,6 +79,10 @@ export default function Products() {
                     </tbody>
                 </table>
             )}
+            <p className="mt-4 text-[15px] text-ink-soft">
+                Un tornillo nuevo empieza con 0 piezas; la existencia solo cambia con entradas y
+                salidas. Solo se puede eliminar un tornillo que no tenga movimientos.
+            </p>
         </section>
     )
 }
