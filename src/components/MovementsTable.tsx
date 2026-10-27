@@ -29,19 +29,19 @@ export default function MovementsTable({ movements }: MovementsTableProps) {
             <tbody>
                 {movements.map((movement) => (
                     <tr key={movement.id}>
-                        <td className="border-b border-line-soft px-4 py-2 font-mono">
+                        <td className="border-b border-line-soft px-4 py-2.75 font-mono">
                             {formatDateTime(movement.createdAt, "date")}
                         </td>
-                        <td className="border-b border-line-soft px-4 py-2 font-mono">
+                        <td className="border-b border-line-soft px-4 py-2.75 font-mono">
                             {formatDateTime(movement.createdAt, "time")}
                         </td>
                         <td
-                            className="truncate border-b border-line-soft px-4 py-2 font-mono font-bold"
+                            className="truncate border-b border-line-soft px-4 py-2.75 font-mono font-bold"
                             title={movement.product.name}
                         >
                             {movement.product.name}
                         </td>
-                        <td className="border-b border-line-soft px-4 py-2">
+                        <td className="border-b border-line-soft px-4 py-2.75">
                             {movement.type === "out" ? (
                                 <span className="bg-out rounded-sm px-4 py-1.5 text-base font-bold text-white">
                                     ↗ Salida
@@ -52,11 +52,11 @@ export default function MovementsTable({ movements }: MovementsTableProps) {
                                 </span>
                             )}
                         </td>
-                        <td className="border-b border-line-soft px-4 py-2 text-right font-mono font-bold">
+                        <td className="border-b border-line-soft px-4 py-2.75 text-right font-mono font-bold">
                             {formatNumber(movement.quantity)}
                         </td>
                         <td
-                            className="truncate border-b border-line-soft px-4 py-2 text-ink-soft"
+                            className="truncate border-b border-line-soft px-4 py-2.75 text-ink-soft"
                             title={movement.note || undefined}
                         >
                             {movement.note || "-"}
