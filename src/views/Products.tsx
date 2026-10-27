@@ -17,7 +17,7 @@ export default function Products() {
                 </div>
                 <Link
                     to="/productos/nuevo"
-                    className="flex h-13 items-center bg-out px-5.5 text-lg font-bold text-white rounded-sm"
+                    className="flex h-13 items-center rounded-sm bg-out px-5.5 text-lg font-bold text-white"
                 >
                     + Nuevo Tornillo
                 </Link>
@@ -62,13 +62,13 @@ export default function Products() {
                                     <div className="flex justify-end gap-2">
                                         <Link
                                             to={`/historial?tornillo=${product.id}`}
-                                            className="inline-flex h-11 items-center border rounded-sm border-line px-4 text-sm font-bold"
+                                            className="inline-flex h-11 items-center rounded-sm border border-line px-4 text-sm font-bold"
                                         >
                                             Ver historial
                                         </Link>
                                         <Link
                                             to={`/productos/${product.id}/editar`}
-                                            className="inline-flex h-11 items-center border rounded-sm border-line px-4 text-sm font-bold"
+                                            className="inline-flex h-11 items-center rounded-sm border border-line px-4 text-sm font-bold"
                                         >
                                             Editar
                                         </Link>
