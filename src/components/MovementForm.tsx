@@ -25,9 +25,9 @@ export default function MovementForm({ product }: MovementFormProps) {
     const savedAt = actionData && "savedAt" in actionData ? actionData.savedAt : 0
 
     return (
-        <Form key={savedAt} method="post" className="flex flex-col gap-6">
-            <div className="border-b border-line-soft pb-5">
-                <p className="font-mono text-3xl font-bold">{product.name}</p>
+        <Form key={savedAt} method="post" className="flex flex-col gap-5">
+            <div className="border-b border-line-soft pb-4">
+                <p className="font-mono text-4xl font-bold">{product.name}</p>
                 <p className="mt-1 text-lg text-ink-soft">
                     Código {product.code} · {formatNumber(product.stock)} pzas en existencia
                 </p>
@@ -43,9 +43,9 @@ export default function MovementForm({ product }: MovementFormProps) {
                         type="button"
                         aria-pressed={type === "out"}
                         onClick={() => setType("out")}
-                        className={`h-16 cursor-pointer border-2 text-xl font-bold ${
+                        className={`h-18 cursor-pointer border-2 rounded-sm text-2xl ${
                             type === "out"
-                                ? "border-out bg-out text-white"
+                                ? "border-out bg-out text-white font-bold"
                                 : "border-line bg-white text-ink-soft"
                         }`}
                     >
@@ -55,9 +55,9 @@ export default function MovementForm({ product }: MovementFormProps) {
                         type="button"
                         aria-pressed={type === "in"}
                         onClick={() => setType("in")}
-                        className={`h-16 cursor-pointer border-2 text-xl font-bold ${
+                        className={`h-18 cursor-pointer border-2 rounded-sm text-2xl ${
                             type === "in"
-                                ? "border-in bg-in text-white"
+                                ? "border-in bg-in text-white font-bold"
                                 : "border-line bg-white text-ink-soft"
                         }`}
                     >
@@ -77,7 +77,7 @@ export default function MovementForm({ product }: MovementFormProps) {
                     autoComplete="off"
                     autoFocus
                     placeholder="0"
-                    className="h-20 border-2 border-line px-5 font-mono text-4xl font-bold"
+                    className="h-22 border-2 border-line rounded-sm px-5 font-mono text-5xl font-bold"
                 />
                 {errors?.quantity && (
                     <p className="font-bold text-warning-text">{errors.quantity[0]}</p>
@@ -93,7 +93,7 @@ export default function MovementForm({ product }: MovementFormProps) {
                     name="note"
                     autoComplete="off"
                     placeholder="Ej. Línea 2"
-                    className="h-14 border-2 border-line px-4 text-lg"
+                    className="h-14 border-2 border-line rounded-sm px-4 text-xl"
                 />
                 {errors?.note && <p className="font-bold text-warning-text">{errors.note[0]}</p>}
             </div>
@@ -107,7 +107,7 @@ export default function MovementForm({ product }: MovementFormProps) {
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`h-18 cursor-pointer text-2xl font-bold text-white disabled:opacity-60 ${
+                className={`h-21 cursor-pointer text-[26px] font-bold rounded-sm text-white disabled:opacity-60 ${
                     type === "out" ? "bg-out" : "bg-in"
                 }`}
             >
@@ -117,8 +117,12 @@ export default function MovementForm({ product }: MovementFormProps) {
                       ? "Registrar salida"
                       : "Registrar entrada"}
             </button>
-            <p className="-mt-3 text-center text-ink-soft">
-                También puedes presionar Enter en la cantidad.
+            <p className="-mt-1.5 text-center text-ink-soft">
+                También puedes presionar{" "}
+                <kbd className="rounded-sm border border-line bg-cell px-1.5 font-mono text-ink">
+                    Enter
+                </kbd>{" "}
+                en la cantidad.
             </p>
         </Form>
     )
