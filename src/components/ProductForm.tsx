@@ -23,7 +23,7 @@ export default function ProductForm({ product, errors, submitLabel }: ProductFor
                     defaultValue={product?.name}
                     placeholder="FT-LW-G6X-0000"
                     autoComplete="off"
-                    className="h-14 border-2 border-line px-4 font-mono text-xl"
+                    className="h-14 rounded-sm border-2 border-line px-4 font-mono text-xl"
                 />
                 {errors?.name && <p className="font-bold text-warning-text">{errors.name[0]}</p>}
             </div>
@@ -38,7 +38,7 @@ export default function ProductForm({ product, errors, submitLabel }: ProductFor
                     defaultValue={product?.code}
                     placeholder="4001800_00000"
                     autoComplete="off"
-                    className="h-14 border-2 border-line px-4 font-mono text-xl"
+                    className="h-14 rounded-sm border-2 border-line px-4 font-mono text-xl"
                 />
                 <p className="text-ink-soft">Debe ser único. Se guarda en mayúsculas.</p>
                 {errors?.code && <p className="font-bold text-warning-text">{errors.code[0]}</p>}
@@ -48,13 +48,13 @@ export default function ProductForm({ product, errors, submitLabel }: ProductFor
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="h-14 cursor-pointer bg-out px-8 text-lg font-bold text-white disabled:opacity-60"
+                    className="h-14 cursor-pointer rounded-sm bg-out px-8 text-lg font-bold text-white disabled:opacity-60"
                 >
                     {isSubmitting ? "Guardando..." : submitLabel}
                 </button>
                 <Link
                     to="/productos"
-                    className="flex h-14 items-center border border-line px-8 text-lg font-bold"
+                    className="flex h-14 items-center rounded-sm border border-line px-8 text-lg font-bold"
                 >
                     Cancelar
                 </Link>
