@@ -14,7 +14,7 @@ export default function Header() {
                     <img src={logo} alt="Troqueles Demo" className="h-11" />
                 </div>
                 <div className="flex flex-col justify-center px-7 py-2">
-                    <span className="text-[13px] tracking-wide text-ink-soft">
+                    <span className="text-[13px] tracking-[0.06em] text-ink-soft">
                         TROQUELES DEMO, S.A. DE C.V.
                     </span>
                     <span className="text-[22px] font-bold">
@@ -38,7 +38,7 @@ export default function Header() {
                     </tbody>
                 </table>
             </div>
-            <div className="h-1.5 bg-brand"></div>
+            <div className="h-1.25 bg-brand"></div>
         </header>
     )
 }
