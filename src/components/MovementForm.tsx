@@ -99,7 +99,10 @@ export default function MovementForm({ product }: MovementFormProps) {
             </div>
 
             {ok && (
-                <p role="status" className="rounded-sm border-2 border-in bg-in/10 p-4 text-center text-[19px] font-bold text-in-text">
+                <p
+                    role="status"
+                    className="rounded-sm border-2 border-in bg-in/10 p-4 text-center text-[19px] font-bold text-in-text"
+                >
                     {ok}
                 </p>
             )}
