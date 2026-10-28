@@ -22,7 +22,7 @@ export default function DeleteProduct({ product }: DeleteProductProps) {
             {fetcher.data?.error && (
                 <p
                     role="alert"
-                    className="mt-4 border-2 border-warning bg-warning-bg p-4 font-bold text-warning-text"
+                    className="mt-4 rounded-sm border-2 border-warning bg-warning-bg p-4 text-center font-bold text-warning-text"
                 >
                     {fetcher.data.error}
                 </p>
@@ -41,14 +41,14 @@ export default function DeleteProduct({ product }: DeleteProductProps) {
                     <button
                         type="submit"
                         disabled={isDeleting}
-                        className="h-12 cursor-pointer bg-out px-6 font-bold text-white disabled:opacity-60"
+                        className="h-12 cursor-pointer rounded-sm bg-out px-6 font-bold text-white disabled:opacity-60"
                     >
                         {isDeleting ? "Eliminando..." : "Sí, eliminar"}
                     </button>
                     <button
                         type="button"
                         onClick={() => setConfirming(false)}
-                        className="h-12 cursor-pointer border border-line px-6 font-bold"
+                        className="h-12 cursor-pointer rounded-sm border border-line px-6 font-bold"
                     >
                         No
                     </button>
@@ -57,7 +57,7 @@ export default function DeleteProduct({ product }: DeleteProductProps) {
                 <button
                     type="button"
                     onClick={() => setConfirming(true)}
-                    className="mt-4 h-12 cursor-pointer border border-line px-6 font-bold"
+                    className="mt-4 h-12 cursor-pointer rounded-sm border border-line px-6 font-bold"
                 >
                     Eliminar...
                 </button>
