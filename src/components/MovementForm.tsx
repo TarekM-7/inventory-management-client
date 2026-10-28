@@ -43,9 +43,9 @@ export default function MovementForm({ product }: MovementFormProps) {
                         type="button"
                         aria-pressed={type === "out"}
                         onClick={() => setType("out")}
-                        className={`h-18 cursor-pointer border-2 rounded-sm text-2xl ${
+                        className={`h-18 cursor-pointer rounded-sm border-2 text-2xl ${
                             type === "out"
-                                ? "border-out bg-out text-white font-bold"
+                                ? "border-out bg-out font-bold text-white"
                                 : "border-line bg-white text-ink-soft"
                         }`}
                     >
@@ -55,9 +55,9 @@ export default function MovementForm({ product }: MovementFormProps) {
                         type="button"
                         aria-pressed={type === "in"}
                         onClick={() => setType("in")}
-                        className={`h-18 cursor-pointer border-2 rounded-sm text-2xl ${
+                        className={`h-18 cursor-pointer rounded-sm border-2 text-2xl ${
                             type === "in"
-                                ? "border-in bg-in text-white font-bold"
+                                ? "border-in bg-in font-bold text-white"
                                 : "border-line bg-white text-ink-soft"
                         }`}
                     >
@@ -77,7 +77,7 @@ export default function MovementForm({ product }: MovementFormProps) {
                     autoComplete="off"
                     autoFocus
                     placeholder="0"
-                    className="h-22 border-2 border-line rounded-sm px-5 font-mono text-5xl font-bold"
+                    className="h-22 rounded-sm border-2 border-line px-5 font-mono text-5xl font-bold"
                 />
                 {errors?.quantity && (
                     <p className="font-bold text-warning-text">{errors.quantity[0]}</p>
@@ -93,13 +93,13 @@ export default function MovementForm({ product }: MovementFormProps) {
                     name="note"
                     autoComplete="off"
                     placeholder="Ej. Línea 2"
-                    className="h-14 border-2 border-line rounded-sm px-4 text-xl"
+                    className="h-14 rounded-sm border-2 border-line px-4 text-xl"
                 />
                 {errors?.note && <p className="font-bold text-warning-text">{errors.note[0]}</p>}
             </div>
 
             {ok && (
-                <p role="status" className="border-2 border-in rounded-sm bg-in/10 p-4 text-[19px] text-in-text text-center font-bold">
+                <p role="status" className="rounded-sm border-2 border-in bg-in/10 p-4 text-center text-[19px] font-bold text-in-text">
                     {ok}
                 </p>
             )}
@@ -107,7 +107,7 @@ export default function MovementForm({ product }: MovementFormProps) {
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`h-21 cursor-pointer text-[26px] font-bold rounded-sm text-white disabled:opacity-60 ${
+                className={`h-21 cursor-pointer rounded-sm text-[26px] font-bold text-white disabled:opacity-60 ${
                     type === "out" ? "bg-out" : "bg-in"
                 }`}
             >
