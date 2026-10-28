@@ -19,14 +19,14 @@ export default function ProductPicker({ products, selectedId, onSelect }: Produc
                         type="button"
                         aria-pressed={isSelected}
                         onClick={() => onSelect(product.id)}
-                        className={`grid w-full cursor-pointer grid-cols-[1fr_auto] items-center gap-5 border-b border-line-soft px-6 py-6 text-left last:border-b-0 ${
+                        className={`grid w-full cursor-pointer grid-cols-[1fr_auto] items-center gap-5 border-b border-line-soft px-6 py-5 text-left last:border-b-0 ${
                             isSelected
                                 ? "bg-in/10 outline-2 -outline-offset-2 outline-in"
                                 : "hover:bg-page"
                         }`}
                     >
                         <span>
-                            <span className="block font-mono text-3xl font-bold">
+                            <span className="mb-1 block font-mono text-3xl font-bold">
                                 {product.name}
                             </span>
                             <span className="text-ink-soft">Código {product.code}</span>
