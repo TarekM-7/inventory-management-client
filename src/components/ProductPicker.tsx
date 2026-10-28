@@ -9,7 +9,7 @@ type ProductPickerProps = {
 
 export default function ProductPicker({ products, selectedId, onSelect }: ProductPickerProps) {
     return (
-        <div className="border border-line bg-white">
+        <div className="max-h-124 overflow-y-auto border border-line bg-white">
             {products.map((product) => {
                 const isSelected = product.id === selectedId
 
