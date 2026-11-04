@@ -18,11 +18,11 @@ export default function MovementsTable({ movements }: MovementsTableProps) {
         <table className="w-full border border-line bg-white table-fixed text-[18px]">
             <thead>
                 <tr className="bg-cell text-left text-sm tracking-wide uppercase">
-                    <th className="w-36 border-b border-line px-4 py-2">Fecha</th>
-                    <th className="w-36 border-b border-line px-4 py-2">Hora</th>
-                    <th className="border-b border-line px-4 py-2">Tornillo</th>
-                    <th className="w-36 border-b border-line px-4 py-2">Tipo</th>
-                    <th className="w-32 border-b border-line px-4 py-2 text-right">Cantidad</th>
+                    <th className="w-[17%] border-b border-line px-4 py-2">Fecha</th>
+                    <th className="w-[11%] border-b border-line px-4 py-2">Hora</th>
+                    <th className="w-[22%] border-b border-line px-4 py-2">Tornillo</th>
+                    <th className="w-[16%] border-b border-line px-4 py-2">Tipo</th>
+                    <th className="w-[14%] border-b border-line px-4 py-2 text-right">Cantidad</th>
                     <th className="border-b border-line px-4 py-2">Nota</th>
                 </tr>
             </thead>
@@ -36,7 +36,7 @@ export default function MovementsTable({ movements }: MovementsTableProps) {
                             {formatDateTime(movement.createdAt, "time")}
                         </td>
                         <td
-                            className="truncate border-b border-line-soft px-4 py-2.75 font-mono font-bold"
+                            className="truncate border-b border-line-soft px-4 py-2.75 font-mono"
                             title={movement.product.name}
                         >
                             {movement.product.name}
