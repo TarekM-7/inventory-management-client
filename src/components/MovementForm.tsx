@@ -77,7 +77,7 @@ export default function MovementForm({ product }: MovementFormProps) {
                     autoComplete="off"
                     autoFocus
                     placeholder="0"
-                    className="h-22 rounded-sm border-2 border-line px-5 font-mono text-5xl font-bold"
+                    className="h-22 rounded-sm border-2 border-line px-5 font-mono text-5xl font-bold focus:border-in focus:shadow-sm focus:shadow-in focus:outline-none"
                 />
                 {errors?.quantity && (
                     <p className="font-bold text-warning-text">{errors.quantity[0]}</p>
@@ -93,7 +93,7 @@ export default function MovementForm({ product }: MovementFormProps) {
                     name="note"
                     autoComplete="off"
                     placeholder="Ej. Línea 2"
-                    className="h-14 rounded-sm border-2 border-line px-4 text-xl"
+                    className="h-14 rounded-sm border-2 border-line px-4 text-xl focus:border-in focus:shadow-sm focus:shadow-in focus:outline-none"
                 />
                 {errors?.note && <p className="font-bold text-warning-text">{errors.note[0]}</p>}
             </div>
