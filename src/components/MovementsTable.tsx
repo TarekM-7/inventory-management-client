@@ -15,7 +15,7 @@ export default function MovementsTable({ movements }: MovementsTableProps) {
     }
 
     return (
-        <table className="w-full border border-line bg-white table-fixed text-[18px]">
+        <table className="w-full table-fixed border border-line bg-white text-[18px]">
             <thead>
                 <tr className="bg-cell text-left text-sm tracking-wide uppercase">
                     <th className="w-[17%] border-b border-line px-4 py-2">Fecha</th>
@@ -43,11 +43,11 @@ export default function MovementsTable({ movements }: MovementsTableProps) {
                         </td>
                         <td className="border-b border-line-soft px-4 py-2.75">
                             {movement.type === "out" ? (
-                                <span className="bg-out rounded-sm px-4 py-1.5 text-base font-bold text-white">
+                                <span className="rounded-sm bg-out px-4 py-1.5 text-base font-bold text-white">
                                     ↗ Salida
                                 </span>
                             ) : (
-                                <span className="border-2 border-in rounded-sm px-2 py-1 text-base font-bold text-in">
+                                <span className="rounded-sm border-2 border-in px-2 py-1 text-base font-bold text-in">
                                     ↙ Entrada
                                 </span>
                             )}
