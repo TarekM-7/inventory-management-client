@@ -4,6 +4,10 @@
     --font-sans: "Roboto Variable", ui-sans-serif, system-ui, sans-serif;
     --font-mono: Consolas, "Cascadia Mono", "Courier New", monospace;
 
+    --breakpoint-logo: 958px;
+    --breakpoint-title: 734px;
+    --breakpoint-labels: 678px;
+
     --color-brand: #f0282c;
     --color-out: #3a3f45;
     --color-in: #2f6690;
