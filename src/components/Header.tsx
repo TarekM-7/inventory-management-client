@@ -20,21 +20,23 @@ export default function Header() {
                     <img src={icon} alt="Troqueles Demo" className="h-11 min-[958px]:hidden" />
                 </div>
                 <div className="flex flex-col justify-center px-7 py-2">
-                    <span className="text-[13px] tracking-[0.06em] text-ink-soft">
+                    <span className="text-xs tracking-[0.06em] text-ink-soft min-[734px]:text-[13px]">
                         TROQUELES DEMO, S.A. DE C.V.
                     </span>
-                    <span className="text-[22px] font-bold">
+                    <span className="text-sm font-bold min-[734px]:text-[22px]">
                         Control de inventario de tornillos
                     </span>
                 </div>
-                <table className="hidden text-sm min-[734px]:table">
+                <table className="hidden text-sm min-[485px]:table">
                     <tbody>
                         <tr>
-                            <th className="border-l border-line bg-cell px-4 text-left">Área</th>
+                            <th className="hidden border-l border-line bg-cell px-4 text-left min-[678px]:table-cell">
+                                Área
+                            </th>
                             <td className="border-l border-line px-4">Almacén</td>
                         </tr>
                         <tr>
-                            <th className="border-t border-l border-line bg-cell px-4 text-left">
+                            <th className="hidden border-t border-l border-line bg-cell px-4 text-left min-[678px]:table-cell">
                                 Fecha
                             </th>
                             <td className="border-t border-l border-line px-4 font-mono">
