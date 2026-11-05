@@ -26,7 +26,7 @@ export default function RegisterMovement() {
         <div className="grid grid-cols-[minmax(0,1fr)_550px] items-start gap-8">
             <div className="flex flex-col gap-8">
                 <section>
-                    <h2 className="border border-b-0 border-line bg-cell py-2.5 px-4.5 text-[15px] font-bold tracking-wider text-ink uppercase">
+                    <h2 className="border border-b-0 border-line bg-cell px-4.5 py-2.5 text-[15px] font-bold tracking-wider text-ink uppercase">
                         1 · Elige el tornillo
                     </h2>
                     <ProductPicker
@@ -36,14 +36,14 @@ export default function RegisterMovement() {
                     />
                 </section>
                 <section>
-                    <h2 className="border border-b-0 border-line bg-cell py-2.5 px-4.5 text-[15px] font-bold tracking-wider text-ink uppercase">
+                    <h2 className="border border-b-0 border-line bg-cell px-4.5 py-2.5 text-[15px] font-bold tracking-wider text-ink uppercase">
                         Últimos movimientos
                     </h2>
                     <MovementsTable movements={movements} />
                 </section>
             </div>
             <section>
-                <h2 className="border border-b-0 border-line bg-cell py-2.5 px-4.5 text-[15px] font-bold tracking-wider text-ink uppercase">
+                <h2 className="border border-b-0 border-line bg-cell px-4.5 py-2.5 text-[15px] font-bold tracking-wider text-ink uppercase">
                     2 · Registra el movimiento
                 </h2>
                 <div className="border border-line bg-white p-6">

@@ -28,7 +28,7 @@ export default function Products() {
                     Todavía no hay tornillos registrados.
                 </p>
             ) : (
-                <table className="w-full border border-line bg-white text-lg table-fixed">
+                <table className="w-full table-fixed border border-line bg-white text-lg">
                     <thead>
                         <tr className="bg-cell text-left text-sm tracking-wide uppercase">
                             <th className="w-[27%] border-b border-line px-4.5 py-2">
