@@ -1,4 +1,5 @@
 import logo from "../assets/logo.svg"
+import icon from "../assets/icon.svg"
 
 const today = new Date().toLocaleDateString("es-MX", {
     day: "2-digit",
@@ -11,7 +12,12 @@ export default function Header() {
         <header>
             <div className="grid grid-cols-[auto_1fr_auto] border-b border-line bg-white">
                 <div className="flex items-center border-r border-line px-7 py-3">
-                    <img src={logo} alt="Troqueles Demo" className="h-11" />
+                    <img
+                        src={logo}
+                        alt="Troqueles Demo"
+                        className="hidden h-11 min-[958px]:block"
+                    />
+                    <img src={icon} alt="Troqueles Demo" className="h-11 min-[958px]:hidden" />
                 </div>
                 <div className="flex flex-col justify-center px-7 py-2">
                     <span className="text-[13px] tracking-[0.06em] text-ink-soft">
@@ -21,7 +27,7 @@ export default function Header() {
                         Control de inventario de tornillos
                     </span>
                 </div>
-                <table className="text-sm">
+                <table className="hidden text-sm min-[734px]:table">
                     <tbody>
                         <tr>
                             <th className="border-l border-line bg-cell px-4 text-left">Área</th>
