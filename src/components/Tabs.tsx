@@ -8,7 +8,7 @@ const tabs = [
 
 export default function Tabs() {
     return (
-        <nav className="flex gap-1 border-b border-line px-8 pt-3.5">
+        <nav className="flex gap-1 border-b border-line px-8 pt-3.5 max-info:flex-col max-info:gap-0 max-info:px-0 max-info:pt-1">
             {tabs.map((tab) => (
                 <NavLink
                     key={tab.to}

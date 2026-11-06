@@ -23,7 +23,7 @@ export default function Header() {
                         Control de inventario de tornillos
                     </span>
                 </div>
-                <table className="hidden text-sm min-[485px]:table">
+                <table className="hidden text-sm info:table">
                     <tbody>
                         <tr>
                             <th className="hidden border-l border-line bg-cell px-4 text-left labels:table-cell">
