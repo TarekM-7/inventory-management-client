@@ -48,7 +48,7 @@ export default function ProductForm({ product, errors, submitLabel }: ProductFor
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="h-14 cursor-pointer rounded-sm bg-out px-8 text-lg font-bold text-white disabled:opacity-60"
+                    className="h-14 cursor-pointer rounded-sm bg-out px-8 text-lg font-bold text-white disabled:cursor-wait disabled:opacity-60"
                 >
                     {isSubmitting ? "Guardando..." : submitLabel}
                 </button>
