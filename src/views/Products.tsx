@@ -13,7 +13,8 @@ export default function Products() {
                 <div>
                     <h1 className="text-3xl font-bold">Productos</h1>
                     <p className="mt-1 text-ink-soft">
-                        {products.length} tornillos · {formatNumber(totalStock)} pzas en existencia
+                        {products.length} {products.length === 1 ? "tornillo" : "tornillos"} ·{" "}
+                        {formatNumber(totalStock)} pzas en existencia
                     </p>
                 </div>
                 <Link
