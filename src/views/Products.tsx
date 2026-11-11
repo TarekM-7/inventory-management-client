@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router"
 import { formatNumber } from "../utils"
 import { getProducts } from "../services/ProductService"
+import { PlusIcon } from "@heroicons/react/24/outline"
 
 export default function Products() {
     const products = useLoaderData<typeof getProducts>()
@@ -17,9 +18,10 @@ export default function Products() {
                 </div>
                 <Link
                     to="/productos/nuevo"
-                    className="flex h-13 items-center rounded-sm bg-out px-5.5 text-lg font-bold text-white"
+                    className="flex h-13 items-center gap-2 rounded-sm bg-out px-5.5 text-lg font-bold text-white"
                 >
-                    + Nuevo Tornillo
+                    <PlusIcon className="size-5 shrink-0" strokeWidth={3} />
+                    Nuevo Tornillo
                 </Link>
             </div>
 
