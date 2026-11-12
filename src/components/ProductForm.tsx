@@ -1,5 +1,6 @@
 import { Form, useNavigation, Link } from "react-router"
 import type { Product } from "../types"
+import { ExclamationTriangleIcon } from "@heroicons/react/24/outline"
 
 type ProductFormProps = {
     product?: Product
@@ -25,7 +26,15 @@ export default function ProductForm({ product, errors, submitLabel }: ProductFor
                     autoComplete="off"
                     className="h-14 rounded-sm border-2 border-line px-4 font-mono text-xl"
                 />
-                {errors?.name && <p className="font-bold text-warning-text">{errors.name[0]}</p>}
+                {errors?.name && (
+                    <p className="flex items-center gap-2 rounded-sm border border-warning bg-warning-bg p-1.5 font-bold text-warning-text">
+                        <ExclamationTriangleIcon
+                            className="size-5 shrink-0 text-warning"
+                            strokeWidth={2.5}
+                        />
+                        {errors.name[0]}
+                    </p>
+                )}
             </div>
 
             <div className="flex flex-col gap-2">
@@ -41,7 +50,15 @@ export default function ProductForm({ product, errors, submitLabel }: ProductFor
                     className="h-14 rounded-sm border-2 border-line px-4 font-mono text-xl"
                 />
                 <p className="text-ink-soft">Debe ser único. Se guarda en mayúsculas.</p>
-                {errors?.code && <p className="font-bold text-warning-text">{errors.code[0]}</p>}
+                {errors?.code && (
+                    <p className="flex items-center gap-2 rounded-sm border border-warning bg-warning-bg p-1.5 font-bold text-warning-text">
+                        <ExclamationTriangleIcon
+                            className="size-5 shrink-0 text-warning"
+                            strokeWidth={2.5}
+                        />
+                        {errors.code[0]}
+                    </p>
+                )}
             </div>
 
             <div className="flex gap-3">
