@@ -1,5 +1,6 @@
 import { isAxiosError } from "axios"
 import { useRouteError } from "react-router"
+import { XCircleIcon } from "@heroicons/react/24/outline"
 
 function getErrorMessage(error: unknown) {
     if (isAxiosError(error)) {
@@ -18,9 +19,10 @@ export default function RouteError() {
     return (
         <div
             role="alert"
-            className="border-2 border-warning bg-warning-bg p-5 text-lg font-bold text-warning-text"
+            className="flex items-center gap-2 border-2 border-warning bg-warning-bg p-5 text-lg font-bold text-warning-text"
         >
-            {getErrorMessage(error)}
+            <XCircleIcon className="size-7 shrink-0" strokeWidth={2} />
+            <p>{getErrorMessage(error)}</p>
         </div>
     )
 }
