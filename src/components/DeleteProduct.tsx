@@ -2,6 +2,7 @@ import { useFetcher } from "react-router"
 import type { Product } from "../types"
 import { useState } from "react"
 import type { deleteProductAction } from "../actions/productActions"
+import { ExclamationTriangleIcon } from "@heroicons/react/24/outline"
 
 type DeleteProductProps = {
     product: Product
@@ -11,6 +12,7 @@ export default function DeleteProduct({ product }: DeleteProductProps) {
     const fetcher = useFetcher<typeof deleteProductAction>()
     const [confirming, setConfirming] = useState(false)
     const isDeleting = fetcher.state !== "idle"
+    const cannotDelete = Boolean(fetcher.data?.error)
 
     return (
         <section className="mt-8 border border-line bg-white p-6">
@@ -22,8 +24,12 @@ export default function DeleteProduct({ product }: DeleteProductProps) {
             {fetcher.data?.error && (
                 <p
                     role="alert"
-                    className="mt-4 rounded-sm border-2 border-warning bg-warning-bg p-4 text-center font-bold text-warning-text"
+                    className="mt-4 flex items-center justify-center gap-2 rounded-sm border-2 border-warning bg-warning-bg p-4 text-center font-bold text-warning-text"
                 >
+                    <ExclamationTriangleIcon
+                        className="size-5 shrink-0 text-warning"
+                        strokeWidth={2.5}
+                    />
                     {fetcher.data.error}
                 </p>
             )}
@@ -40,8 +46,10 @@ export default function DeleteProduct({ product }: DeleteProductProps) {
                     </p>
                     <button
                         type="submit"
-                        disabled={isDeleting}
-                        className="h-12 cursor-pointer rounded-sm bg-out px-6 font-bold text-white disabled:cursor-wait disabled:opacity-60"
+                        disabled={isDeleting || cannotDelete}
+                        className={`h-12 cursor-pointer rounded-sm bg-out px-6 font-bold text-white disabled:opacity-60 ${
+                            isDeleting ? "disabled:cursor-wait" : "disabled:cursor-not-allowed"
+                        }`}
                     >
                         {isDeleting ? "Eliminando..." : "Sí, eliminar"}
                     </button>
@@ -58,7 +66,8 @@ export default function DeleteProduct({ product }: DeleteProductProps) {
                 <button
                     type="button"
                     onClick={() => setConfirming(true)}
-                    className="mt-4 h-12 cursor-pointer rounded-sm border border-line px-6 font-bold"
+                    disabled={cannotDelete}
+                    className="mt-4 h-12 cursor-pointer rounded-sm border border-line px-6 font-bold disabled:cursor-not-allowed disabled:opacity-60"
                 >
                     Eliminar...
                 </button>
