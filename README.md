@@ -219,7 +219,7 @@ Things I want to improve, found while using the app:
 - [ ] **A responsive Registrar screen.** The two columns have a fixed `550px` form, so on a smaller window or screen they do not fit. Using Tailwind's breakpoints (`md:`, `lg:`, which are media queries), the form should move below the screw list on narrow screens.
 - [x] **Softer corners.** Buttons, inputs, tabs and messages now have a 4px radius (Tailwind's `rounded-sm`), which keeps the plant-form look but makes it feel less stiff.
 - [ ] **The same focus style on every field.** Cantidad and Nota now get a blue border and shadow when focused, instead of the browser's black ring. The name and code fields of the product form and the Historial `select` still show the black ring.
-- [ ] **A checkmark in the Registrar screw list.** A circle on the left of each screw that fills with blue and shows a checkmark on the selected one, so the choice is clear at a glance.
+- [x] **A checkmark in the Registrar screw list.** Each screw now has a circle on the left that fills with blue and shows a checkmark when it is selected, so the choice is clear at a glance. A long screw name is cut with "…", and the full name shows on hover.
 - [ ] **SVG arrows for Salida and Entrada.** The `↗` and `↙` characters depend on the font and can look different on each PC. SVG icons in the form buttons and the table labels would look the same everywhere.
 
 ## Acknowledgements
