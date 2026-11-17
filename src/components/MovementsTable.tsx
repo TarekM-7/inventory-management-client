@@ -1,5 +1,6 @@
 import type { Movement } from "../types"
 import { formatDateTime, formatNumber } from "../utils"
+import { ArrowDownLeftIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline"
 
 type MovementsTableProps = {
     movements: Movement[]
@@ -43,12 +44,20 @@ export default function MovementsTable({ movements }: MovementsTableProps) {
                         </td>
                         <td className="border-b border-line-soft px-4 py-2.75">
                             {movement.type === "out" ? (
-                                <span className="rounded-sm bg-out px-4 py-1.5 text-base font-bold text-white">
-                                    ↗ Salida
+                                <span className="inline-flex items-center gap-1.5 rounded-sm bg-out px-4 py-1.5 text-base font-bold text-white">
+                                    <ArrowUpRightIcon
+                                        className="size-3.5 shrink-0"
+                                        strokeWidth={3.5}
+                                    />
+                                    Salida
                                 </span>
                             ) : (
-                                <span className="rounded-sm border-2 border-in px-2 py-1 text-base font-bold text-in">
-                                    ↙ Entrada
+                                <span className="inline-flex items-center gap-1.5 rounded-sm border-2 border-in px-2 py-1 text-base font-bold text-in">
+                                    <ArrowDownLeftIcon
+                                        className="size-3.5 shrink-0"
+                                        strokeWidth={3.5}
+                                    />
+                                    Entrada
                                 </span>
                             )}
                         </td>

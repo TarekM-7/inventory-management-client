@@ -220,7 +220,7 @@ Things I want to improve, found while using the app:
 - [x] **Softer corners.** Buttons, inputs, tabs and messages now have a 4px radius (Tailwind's `rounded-sm`), which keeps the plant-form look but makes it feel less stiff.
 - [ ] **The same focus style on every field.** Cantidad and Nota now get a blue border and shadow when focused, instead of the browser's black ring. The name and code fields of the product form and the Historial `select` still show the black ring.
 - [x] **A checkmark in the Registrar screw list.** Each screw now has a circle on the left that fills with blue and shows a checkmark when it is selected, so the choice is clear at a glance. A long screw name is cut with "…", and the full name shows on hover.
-- [ ] **SVG arrows for Salida and Entrada.** The `↗` and `↙` characters depend on the font and can look different on each PC. SVG icons in the form buttons and the table labels would look the same everywhere.
+- [x] **SVG arrows for Salida and Entrada.** The form buttons and the table labels now use Heroicons arrows instead of the `↗` and `↙` characters, so they look the same on every PC.
 
 ## Acknowledgements
 
