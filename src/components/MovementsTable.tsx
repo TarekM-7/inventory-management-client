@@ -44,17 +44,17 @@ export default function MovementsTable({ movements }: MovementsTableProps) {
                         </td>
                         <td className="border-b border-line-soft px-4 py-2.75">
                             {movement.type === "out" ? (
-                                <span className="inline-flex items-center gap-1.5 rounded-sm bg-out px-4 py-1.5 text-base font-bold text-white">
+                                <span className="rounded-sm bg-out px-4 py-1.5 text-base font-bold text-white">
                                     <ArrowUpRightIcon
-                                        className="size-3.5 shrink-0"
+                                        className="mr-1.5 inline size-3.5"
                                         strokeWidth={3.5}
                                     />
                                     Salida
                                 </span>
                             ) : (
-                                <span className="inline-flex items-center gap-1.5 rounded-sm border-2 border-in px-2 py-1 text-base font-bold text-in">
+                                <span className="rounded-sm border-2 border-in px-2 py-1 text-base font-bold text-in">
                                     <ArrowDownLeftIcon
-                                        className="size-3.5 shrink-0"
+                                        className="mr-1.5 inline size-3.5"
                                         strokeWidth={3.5}
                                     />
                                     Entrada
