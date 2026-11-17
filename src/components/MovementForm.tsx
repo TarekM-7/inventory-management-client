@@ -113,7 +113,7 @@ export default function MovementForm({ product }: MovementFormProps) {
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`h-21 cursor-pointer rounded-sm text-[26px] font-bold text-white disabled:opacity-60 ${
+                className={`h-21 cursor-pointer rounded-sm text-[26px] font-bold text-white disabled:cursor-wait disabled:opacity-60 ${
                     type === "out" ? "bg-out" : "bg-in"
                 }`}
             >
