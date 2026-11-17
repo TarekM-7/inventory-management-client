@@ -24,14 +24,19 @@ export default function MovementForm({ product }: MovementFormProps) {
     const navigation = useNavigation()
     const isSubmitting = navigation.state === "submitting"
     const [type, setType] = useState<"in" | "out">("out")
+    const [lastSavedAt, setLastSavedAt] = useState(0)
 
     const errors: MovementErrors | undefined =
         actionData && "errors" in actionData ? actionData.errors : undefined
     const ok = actionData && "ok" in actionData ? actionData.ok : undefined
     const savedAt = actionData && "savedAt" in actionData ? actionData.savedAt : 0
 
+    if (savedAt && savedAt !== lastSavedAt) {
+        setLastSavedAt(savedAt)
+    }
+
     return (
-        <Form key={savedAt} method="post" className="flex flex-col gap-5">
+        <Form key={lastSavedAt} method="post" className="flex flex-col gap-5">
             <div className="border-b border-line-soft pb-4">
                 <p className="font-mono text-4xl font-bold">{product.name}</p>
                 <p className="mt-1 text-lg text-ink-soft">
