@@ -3,6 +3,7 @@ import type { registerMovementAction } from "../actions/movementActions"
 import type { Product } from "../types"
 import { useState } from "react"
 import { formatNumber } from "../utils"
+import { ArrowDownLeftIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline"
 
 type MovementFormProps = {
     product: Product
@@ -43,25 +44,27 @@ export default function MovementForm({ product }: MovementFormProps) {
                         type="button"
                         aria-pressed={type === "out"}
                         onClick={() => setType("out")}
-                        className={`h-18 cursor-pointer rounded-sm border-2 text-2xl ${
+                        className={`flex h-18 cursor-pointer items-center justify-center gap-3.5 rounded-sm border-2 text-2xl ${
                             type === "out"
                                 ? "border-out bg-out font-bold text-white"
                                 : "border-line bg-white text-ink-soft"
                         }`}
                     >
-                        ↗ Salida
+                        <ArrowUpRightIcon className="size-4.5 shrink-0" strokeWidth={3} />
+                        Salida
                     </button>
                     <button
                         type="button"
                         aria-pressed={type === "in"}
                         onClick={() => setType("in")}
-                        className={`h-18 cursor-pointer rounded-sm border-2 text-2xl ${
+                        className={`flex h-18 cursor-pointer items-center justify-center gap-3.5 rounded-sm border-2 text-2xl ${
                             type === "in"
                                 ? "border-in bg-in font-bold text-white"
                                 : "border-line bg-white text-ink-soft"
                         }`}
                     >
-                        ↙ Entrada
+                        <ArrowDownLeftIcon className="size-4.5 shrink-0" strokeWidth={3} />
+                        Entrada
                     </button>
                 </div>
             </fieldset>
