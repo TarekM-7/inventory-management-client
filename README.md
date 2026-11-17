@@ -6,7 +6,7 @@ A web app to manage the screw inventory of a manufacturing plant's warehouse, bu
 
 It is the frontend of [inventory-management-api](https://github.com/TarekM-7/inventory-management-api), a Node.js REST API with PostgreSQL. This is a practice project I built after Project 10 of the Udemy course [React de Principiante a Experto](https://www.udemy.com/course/react-de-principiante-a-experto-creando-mas-de-10-aplicaciones/): it repeats the course's React client pattern with a new domain, and fixes what the course left out, like showing errors on screen and handling the loading and empty states. The company in the header, **Troqueles Demo**, is fictional.
 
-![The Registrar screen under a "Troqueles Demo" header with a red stripe and three tabs: on the left, four screws with their Odoo name, code and stock, the first one selected in blue, and a table of the latest entries and exits; on the right, the selected screw with the Salida and Entrada buttons, a large quantity field, an optional note and a dark "Registrar salida" button](docs/screenshot.png)
+![The Registrar screen under a "Troqueles Demo" header with a red stripe and three tabs: on the left, four screws with their Odoo name, code and stock, the first one selected in blue with a checkmark, and a table of the latest entries and exits with arrow labels; on the right, the selected screw with the Salida and Entrada buttons with arrow icons, a large quantity field, an optional note and a dark "Registrar salida" button](docs/screenshot.png)
 
 ## Features
 
