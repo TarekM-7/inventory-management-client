@@ -3,7 +3,12 @@ import type { registerMovementAction } from "../actions/movementActions"
 import type { Product } from "../types"
 import { useState } from "react"
 import { formatNumber } from "../utils"
-import { ArrowDownLeftIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline"
+import {
+    ArrowDownLeftIcon,
+    ArrowUpRightIcon,
+    ExclamationTriangleIcon
+} from "@heroicons/react/24/outline"
+import CheckIcon from "./CheckIcon"
 
 type MovementFormProps = {
     product: Product
@@ -83,7 +88,13 @@ export default function MovementForm({ product }: MovementFormProps) {
                     className="h-22 rounded-sm border-2 border-line px-5 font-mono text-5xl font-bold focus:border-in focus:shadow-sm focus:shadow-in focus:outline-none"
                 />
                 {errors?.quantity && (
-                    <p className="font-bold text-warning-text">{errors.quantity[0]}</p>
+                    <p className="flex items-center gap-2 rounded-sm border border-warning bg-warning-bg p-1.5 font-bold text-warning-text">
+                        <ExclamationTriangleIcon
+                            className="size-5 shrink-0 text-warning"
+                            strokeWidth={2.5}
+                        />
+                        {errors.quantity[0]}
+                    </p>
                 )}
             </div>
 
@@ -98,14 +109,23 @@ export default function MovementForm({ product }: MovementFormProps) {
                     placeholder="Ej. Línea 2"
                     className="h-14 rounded-sm border-2 border-line px-4 text-xl focus:border-in focus:shadow-sm focus:shadow-in focus:outline-none"
                 />
-                {errors?.note && <p className="font-bold text-warning-text">{errors.note[0]}</p>}
+                {errors?.note && (
+                    <p className="flex items-center gap-2 rounded-sm border border-warning bg-warning-bg p-1.5 font-bold text-warning-text">
+                        <ExclamationTriangleIcon
+                            className="size-5 shrink-0 text-warning"
+                            strokeWidth={2.5}
+                        />
+                        {errors.note[0]}
+                    </p>
+                )}
             </div>
 
             {ok && (
                 <p
                     role="status"
-                    className="rounded-sm border-2 border-in bg-in/10 p-4 text-center text-[19px] font-bold text-in-text"
+                    className="flex items-center justify-center gap-2 rounded-sm border-2 border-in bg-in/10 p-4 text-center text-[19px] font-bold text-in-text"
                 >
+                    <CheckIcon />
                     {ok}
                 </p>
             )}
