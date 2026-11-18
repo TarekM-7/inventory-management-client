@@ -65,7 +65,10 @@ export default function History() {
 
             {movements.data.length === 0 ? (
                 <p className="border border-line bg-white p-6 text-lg">
-                    Todavía no hay movimientos. Regístralos en{" "}
+                    {product
+                        ? "Este tornillo todavía no tiene movimientos."
+                        : "Todavía no hay movimientos."}{" "}
+                    Regístralos en{" "}
                     <Link to="/" className="font-bold text-in underline">
                         Registrar
                     </Link>
