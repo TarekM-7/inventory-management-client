@@ -13,7 +13,7 @@ export default function Pagination({ page, totalPages, pageUrl }: PaginationProp
 
     const linkClass = "flex h-11 items-center rounded-sm border border-line bg-white px-4 font-bold"
     const disabledClass =
-        "flex h-11 items-center rounded-sm border border-line-soft bg-white/25 px-4 font-bold text-line"
+        "flex h-11 cursor-not-allowed items-center rounded-sm border border-line-soft bg-white/25 px-4 font-bold text-line"
 
     return (
         <nav aria-label="Páginas" className="mt-5 flex items-center justify-between">
