@@ -1,4 +1,4 @@
-import { Form, useLoaderData } from "react-router"
+import { Form, Link, useLoaderData } from "react-router"
 import MovementsTable from "../components/MovementsTable"
 import Pagination from "../components/Pagination"
 import type { historyLoader } from "../loaders/historyLoader"
@@ -63,7 +63,17 @@ export default function History() {
                 </Form>
             </div>
 
-            <MovementsTable movements={movements.data} />
+            {movements.data.length === 0 ? (
+                <p className="border border-line bg-white p-6 text-lg">
+                    Todavía no hay movimientos. Regístralos en{" "}
+                    <Link to="/" className="font-bold text-in underline">
+                        Registrar
+                    </Link>
+                    .
+                </p>
+            ) : (
+                <MovementsTable movements={movements.data} />
+            )}
             <Pagination page={page} totalPages={totalPages} pageUrl={pageUrl} />
         </section>
     )
